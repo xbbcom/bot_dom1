@@ -69,10 +69,10 @@ sub check_attak_one($){
 									print $span -> as_text, "\n";
 									print $span -> attr('class'), "\n";
 									$span1 = $_ ->look_down(_tag => 'span', class => 'timer');
-									$resp = $span1 -> as_text;
+									my $timer = $span1 -> as_text;
 									#print $resp, "\n";
-									print LOG scalar(localtime), ' check_attak_one() Нападение', "\n";
-									return @ret = (200, $resp);
+									print LOG scalar(localtime), ' check_attak_one() Нападение через ', "$timer \n";
+									return (200, $timer);
 									#qx{mplayerc.exe sirena.mp3};
 								} else {
 									print LOG scalar(localtime), ' check_attak_one() нет значения', "\n";
